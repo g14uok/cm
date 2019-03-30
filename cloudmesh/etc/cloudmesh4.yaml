@@ -1,4 +1,10 @@
 cloudmesh:
+  source:
+    common: ~/Desktop/github/cloudmesh
+    cmd5: ~/Desktop/github/cloudmesh
+    openapi: ~/Desktop/github/cloudmesh
+    sys: ~/Desktop/github/cloudmesh
+    cm: ~/Desktop/github/cloudmesh-community
   profile:
     firstname: TBD
     lastname: TBD
@@ -11,7 +17,29 @@ cloudmesh:
     experiment: base
     cloud: azure
     cluster: clustera
-  storage:
+  storge:
+    storage_a:
+      cm:
+        heading: Aws Boto
+        host: aws.com
+        label: Aws
+        kind: awsboto
+        version: TBD
+      default:
+        directory: a
+      credentials:
+        name: TBD
+    storage_b:
+      cm:
+        heading: Aws Boto
+        host: aws.com
+        label: Aws
+        kind: awslibcloud
+        version: TBD
+      default:
+        directory: b
+      credentials:
+        name: TBD
     box:
       cm:
         heading: Box
@@ -23,6 +51,18 @@ cloudmesh:
         directory: TBD
       credentials:
         name: TBD
+    aws-myhome:
+      cm:
+        heading: homedir
+        host: aws.com
+        label: dome-dir
+        kind: aws-s3
+        version: TBD
+      default:
+        directory: TBD
+      credentials:
+        name: TBD
+        bucket: home
     gdrive:
       cm:
         heading: GDrive
@@ -33,12 +73,29 @@ cloudmesh:
       default:
         directory: TBD
       credentials:
-        client_id: TBD
-        prokect_id: TBD
-        auth_uri: TBD
-        token_uri: TBD
-        client_secret: TBD
+        client_id: "605083724477-1lhaauu9csjdb3r378ajq236beddvam2.apps.googleusercontent.com"
+        project_id: "artful-sky-231001"
+        auth_uri: "https://accounts.google.com/o/oauth2/auth"
+        token_uri: "https://oauth2.googleapis.com/token"
+        client_secret: "0jTr9aPTJVvtqCVQBHCd_xTZ"
+        auth_provider_x509_cert_url: "https://www.googleapis.com/oauth2/v1/certs"
+        redirect_uris:
+          - "urn:ietf:wg:oauth:2.0:oob"
+          - "http://localhost"
   cloud:
+    docker:
+      cm:
+        active: True
+        heading: Docker
+        host: localhost
+        label: Docker
+        kind: docker
+        version: 18.09.2
+      default:
+        os: "ubuntu"
+        version: "18.04"
+      credentials:
+        key: "~/.ssh/id_rsa"
     azure:
       cm:
         active: False
@@ -68,15 +125,15 @@ cloudmesh:
         kind: aws
         version: TBD
       default:
-        region: 'us-west-2'
-        image: 'ami-0bbe6b35405ecebdb'
+        image: 'ami-0f65671a86f061fcd'
         size: 't2.micro'
-        EC2_PRIVATE_KEY_FILE_NAME: 'aws_cert'
-        EC2_SECURITY_GROUP: 'group1'
       credentials:
+        region: 'us-west-2'
+        EC2_SECURITY_GROUP: 'group1'
         EC2_ACCESS_ID: TBD
         EC2_SECRET_KEY: TBD
         EC2_PRIVATE_KEY_FILE_PATH: '~/.cloudmesh/aws_cert.pem'
+        EC2_PRIVATE_KEY_FILE_NAME: 'aws_cert'
     chameleon:
       cm:
         active: True
@@ -115,8 +172,8 @@ cloudmesh:
         OS_PROJECT_ID: 7bfa792867a141e6855fdaaa2a960a4e
         OS_PROJECT_NAME: TG-CIE170003
         OS_TENANT_NAME: TG-CIE170003
-        OS_USERNAME: tg455498
-        OS_PASSWORD: Sol5uMvOxMc1
+        OS_USERNAME: TBD
+        OS_PASSWORD: TBD
         OS_AUTH_URL: https://tacc.jetstream-cloud.org:5000
         OS_IDENTITY_API_VERSION: 3
         OS_INTERFACE: public
@@ -208,7 +265,7 @@ cloudmesh:
       MONGO_DOWNLOAD:
         darwin: https://fastdl.mongodb.org/osx/mongodb-osx-ssl-x86_64-4.0.4.tgz
         linux: https://fastdl.mongodb.org/linux/mongodb-linux-x86_64-4.0.4.tgz
-        windows: https://fastdl.mongodb.org/win32/mongodb-win32-x86_64-2008plus-ssl-4.0.4-signed.msi
+        win32: https://fastdl.mongodb.org/win32/mongodb-win32-x86_64-2008plus-ssl-4.0.4-signed.msi
         redhat: https://repo.mongodb.org/yum/redhat/7/mongodb-org/4.0/x86_64/RPMS/mongodb-org-server-4.0.4-1.el7.x86_64.rpm
   cluster:
     bigred2:
